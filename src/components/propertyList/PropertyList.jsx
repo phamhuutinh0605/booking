@@ -54,7 +54,7 @@ const PropertyList = () => {
           className="pListImg"
         />
         <div className="pListTitles">
-          <h1>Cabins</h1>
+          <h1>Nhà gỗ</h1>
           <h2>2331 chỗ nghỉ</h2>
         </div>
       </div>
