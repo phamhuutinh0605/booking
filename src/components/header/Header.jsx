@@ -14,10 +14,10 @@ import { DateRange } from "react-date-range"; // thư viện date-range
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns"; //format ngày
+import { useNavigate } from "react-router-dom";
 
 // type: để component hotels chỉ hiển thị phần navBar và headerList
-const Header = ({type}) => {
-
+const Header = ({ type }) => {
   // chọn ngày đi, ngày về
   const [date, setDate] = useState([
     {
@@ -47,11 +47,23 @@ const Header = ({type}) => {
     });
   };
   const [openOptions, setOpenOptions] = useState(false);
+
+  // gửi dữ liệu qua trang hotels
+  const [destination, setDestination] = useState("");
+  const navigate = useNavigate();
+  const handleSearch = () => {
+    //useNavigate: chuyển sang trang khác và đem theo dữ liệu.
+    navigate("/hotels",{ state: {destination,date,options} });
+  };
   return (
     <div className="header">
       {/* nếu type===list thì class là headerContainer listMode, 
       ngược lại là headerContainer*/}
-      <div className={type==="list"?"headerContainer listMode":"headerContainer"}>
+      <div
+        className={
+          type === "list" ? "headerContainer listMode" : "headerContainer"
+        }
+      >
         <div className="headerlist">
           <div className="headerListItems active">
             <FontAwesomeIcon icon={faBed} />
@@ -74,7 +86,7 @@ const Header = ({type}) => {
             <span>Taxi sân bay</span>
           </div>
         </div>
-{/* cho type khác list để phần này khong được hiển thị trong Hotels */}
+        {/* cho type khác list để phần này khong được hiển thị trong Hotels */}
         {type !== "list" && (
           <>
             <h1 className="headeTitle">Tìm chỗ nghỉ tiếp theo</h1>
@@ -88,6 +100,7 @@ const Header = ({type}) => {
                 <input
                   placeholder="Bạn muốn đến đâu?"
                   className="headerSearchInput"
+                  onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
               <div className="headerSearchItem">
@@ -202,11 +215,12 @@ const Header = ({type}) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerSearchBtn">Tìm</button>
+                <button className="headerSearchBtn" onClick={handleSearch}>Tìm</button>
               </div>
             </div>
           </>
-         )}  {/* kết thúc phần không hiển thị trong Hotels */}
+        )}{" "}
+        {/* kết thúc phần không hiển thị trong Hotels */}
       </div>
     </div>
   );
