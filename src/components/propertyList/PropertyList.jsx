@@ -10,8 +10,8 @@ const PropertyList = () => {
           className="pListImg"
         />
         <div className="pListTitles">
-          <h1>Hotels</h1>
-          <h2>233 chỗ nghỉ</h2>
+          <h1>Khách sạn</h1>
+          <h2>1283 chỗ nghỉ</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -21,8 +21,8 @@ const PropertyList = () => {
           className="pListImg"
         />
         <div className="pListTitles">
-          <h1>Apartments</h1>
-          <h2>2331 chỗ nghỉ</h2>
+          <h1>Căn hộ</h1>
+          <h2>291 chỗ nghỉ</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -32,8 +32,8 @@ const PropertyList = () => {
           className="pListImg"
         />
         <div className="pListTitles">
-          <h1>Resorts</h1>
-          <h2>2331 chỗ nghỉ</h2>
+          <h1>Resort</h1>
+          <h2>545 chỗ nghỉ</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -43,8 +43,8 @@ const PropertyList = () => {
           className="pListImg"
         />
         <div className="pListTitles">
-          <h1>Villas</h1>
-          <h2>2331 chỗ nghỉ</h2>
+          <h1>Biệt thự</h1>
+          <h2>352 chỗ nghỉ</h2>
         </div>
       </div>
       <div className="pListItem">
