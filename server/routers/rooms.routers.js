@@ -1,13 +1,13 @@
 const express=require("express");
-const {getAllRooms}=require("../controllers/rooms.controllers")
+const {getAllRooms, getDetailRoom, createRoom, updateRoom, deleteRoom}=require("../controllers/rooms.controllers.js")
 const roomsRouter=express.Router();
 
 
-roomsRouter.get("/rooms",getAllRooms);
-roomsRouter.get("/",);
-roomsRouter.post("/",);
-roomsRouter.put("/",);
-roomsRouter.delete("/",);
+roomsRouter.get("/",getAllRooms);
+roomsRouter.get("/:id",getDetailRoom);
+roomsRouter.post("/",createRoom);
+roomsRouter.put("/:id",updateRoom);
+roomsRouter.delete("/:id",deleteRoom);
 
 module.exports={
     roomsRouter

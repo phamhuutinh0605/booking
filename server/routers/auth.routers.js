@@ -1,13 +1,10 @@
 const express=require("express");
-const {getAllAuth}=require("../controllers/auth.controllers")
+const { register, login}=require("../controllers/auth.controllers.js")
 const authRouter=express.Router();
 
 
-authRouter.get("/auth",getAllAuth);
-authRouter.get("/",);
-authRouter.post("/",);
-authRouter.put("/",);
-authRouter.delete("/",);
+authRouter.post("/register",register);
+authRouter.post("/login",login);
 
 module.exports={
     authRouter
