@@ -28,7 +28,7 @@ mongoose.connection.on("disconnected",()=>{
 
 app.use("/api/v1",rootRouter)
 
-const port =process.env.PORT|| 8800;
+const port =8800||process.env.PORT;
 connect();
 app.listen(port, () => {
   console.log(`Connect to backend http://localhost:${port}/api/v1`);
